@@ -1,0 +1,39 @@
+<%= form_for(@postagem) do |f| %>
+  
+  <% if @postagem.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@postagem.errors.count, "error") %> prohibited this postagem from being saved:</h2>
+
+      <ul>
+      <% @postagem.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="thumbnail">
+  <div class="input-group input-group-lg">
+    <%= f.label :texto, class: "input-group-addon", id: "basic-addon1"%>
+    <%= f.text_area :texto, class: "form-control", placeholder: "Postagem aqui" %>
+  </div>
+  <br>
+  <div class="input-group input-group-sm">
+    <%= f.label :carater, class: "input-group-addon", id: "basic-addon1"%>
+    <%= f.text_area :carater, class: "form-control", placeholder: "pode ser: 'notícia', 'comentário' ou 'crítica'" %>
+  </div>
+  <br>
+  <div class="input-group input-group-sm">
+    <%= f.label :nome, class: "input-group-addon", id: "basic-addon1"%>
+    <%= f.text_area :nome, class: "form-control" %>
+  </div>
+  <br>
+  <div class="input-group input-group-sm">
+    <%= f.label :email, class: "input-group-addon", id: "basic-addon1"%>
+    <%= f.text_area :email, class: "form-control" %>
+  </div>
+  <br>
+  <div >
+    <%= f.submit 'Escrever', :class => 'btn btn-default center-block'  %>
+  </div>
+  </div>
+<% end %>

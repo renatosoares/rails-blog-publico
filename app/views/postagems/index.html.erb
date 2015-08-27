@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Postagems</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Texto</th>
+      <th>Carater</th>
+      <th>Nome</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @postagems.each do |postagem| %>
+      <tr>
+        <td><%= postagem.texto %></td>
+        <td><%= postagem.carater %></td>
+        <td><%= postagem.nome %></td>
+        <td><%= postagem.email %></td>
+        <td><%= link_to 'Show', postagem %></td>
+        <td><%= link_to 'Edit', edit_postagem_path(postagem) %></td>
+        <td><%= link_to 'Destroy', postagem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Postagem', new_postagem_path %>

@@ -1,0 +1,27 @@
+<div class="container">
+	
+	<div class="row">
+		<div class="col-sm-3">
+			<% if notice %>
+				<p id="notice"><%= notice %></p>
+			<% end %>
+		</div>
+		<div class="col-sm-6">
+			<div >
+				<%= render 'form' %>
+			</div>
+			<hr>
+			<% @postListagem.each do |postList| %>
+				<p>	<%= sanitize(postList.texto) %><span class="label label-success"><%= postList.carater %></span></p>
+				<h3 ><%= postList.nome %></h3>
+				<h5 ><%= postList.email %></h5>
+				<hr>
+					<%= render 'comentario' %>
+				<hr>
+			<% end %>
+		</div>
+		<div class="col-sm-3">
+			&nbsp;
+		</div>
+	</div>
+</div>
