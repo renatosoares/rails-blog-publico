@@ -17,6 +17,8 @@ class PostagemsController < ApplicationController
     @postagem = Postagem.new
   end
 
+
+
   # GET /postagems/1/edit
   def edit
   end
@@ -28,7 +30,7 @@ class PostagemsController < ApplicationController
 
     respond_to do |format|
       if @postagem.save
-        format.html { redirect_to @postagem, notice: 'Postagem was successfully created.' }
+        format.html { redirect_to index_url, notice: 'Postagem was successfully created.' }
         format.json { render :show, status: :created, location: @postagem }
       else
         format.html { render :new }

@@ -26,13 +26,16 @@ class ComentariosController < ApplicationController
   def create
     @comentario = Comentario.new(comentario_params)
 
+
     respond_to do |format|
       if @comentario.save
-        format.html { redirect_to @comentario, notice: 'Comentario was successfully created.' }
+        format.html { redirect_to index_url, notice: 'Comentario was successfully created.' }
         format.json { render :show, status: :created, location: @comentario }
+        
       else
         format.html { render :new }
         format.json { render json: @comentario.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end

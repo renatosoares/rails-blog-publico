@@ -3,5 +3,13 @@ class ListagemController < ApplicationController
   	@postListagem = Postagem.order(:created_at)
   	@postagem = Postagem.new
   	@comentarioNovo = Comentario.new
+    @comentariosListagem = Comentario.all
   end
+
+  def comentar
+     @comentariosListagem = Comentario.all
+      respond_to do |format|
+        format.js
+      end
+  end 
 end

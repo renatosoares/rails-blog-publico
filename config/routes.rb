@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   get 'listagem/index'
 
   resources :postagems
+  resources :listagem
   root 'listagem#index', as: 'Blog'
+  post 'listagem/index', as: 'index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
