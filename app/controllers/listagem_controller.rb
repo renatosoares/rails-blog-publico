@@ -1,9 +1,10 @@
 class ListagemController < ApplicationController
   def index
-  	@postListagem = Postagem.order(:created_at)
+  	@postListagem = Postagem.order('created_at DESC')
   	@postagem = Postagem.new
   	@comentarioNovo = Comentario.new
     @comentariosListagem = Comentario.all
+
   end
 
   def comentar

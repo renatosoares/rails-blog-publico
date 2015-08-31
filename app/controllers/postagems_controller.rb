@@ -27,10 +27,10 @@ class PostagemsController < ApplicationController
   # POST /postagems.json
   def create
     @postagem = Postagem.new(postagem_params)
-
+    OrderNotifier.received(@postagem).deliver
     respond_to do |format|
       if @postagem.save
-        format.html { redirect_to index_url, notice: 'Postagem was successfully created.' }
+        format.html { redirect_to index_url, notice: 'Postagem publicada e email de confirmação enviado para localhost mailcatcher' }
         format.json { render :show, status: :created, location: @postagem }
       else
         format.html { render :new }

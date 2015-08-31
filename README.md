@@ -42,3 +42,20 @@ comentários devem ser exibidos na mesma ordem em que foram inseridos.
 CONCLUA a tarefa anexando uma imagem capturada da tela principal com as
 funcionalidades acima descritas.
 
+Avaliação Prática II - 2ª Etapa - Tarefas Específicas
+
+Obs.: cada aluno deve complementar a implementação do "Blog Público" com mais
+1 (uma) funcionalidade e 1 (um) teste de integração envolvido nessa nova
+funcionalidade (a ação original + o envio do e-mail), de acordo com o código
+atribuído a ele.
+
+Abaixo segue a descrição das funcionalidades a serem implementadas.
+
+(*) Utilizando o mecanismo de envio de e-mails do Rails, implemente uma das
+		seguintes funcionalidades:
+
+(__A) Enviar um e-mail para o usuário que acabou de cadastrar uma postagem,
+			informando o sucesso no cadastro.
+
+Renato Freire Soares de Lima - A
+
